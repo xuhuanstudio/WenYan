@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.input.*?>
+<?import org.fxmisc.richtext.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox fx:id="mainNode" prefHeight="800.0" prefWidth="1000.0" styleClass="main" stylesheets="@editor.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.Editor">
+   <children>
+      <HBox fx:id="topBar" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="35.0" prefWidth="1000.0" styleClass="top-bar">
+         <children>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <MenuBar fx:id="topMenuBar" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" styleClass="top-menu-bar">
+                    <menus>
+                      <Menu mnemonicParsing="false" styleClass="top-menu" text="文件">
+                        <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onNewFile" styleClass="top-menu-item" text="新建文件">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onOpenFile" styleClass="top-menu-item" text="打开文件">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                          <MenuItem mnemonicParsing="false" onAction="#onOpenFolder" styleClass="top-menu-item" text="打开文件夹">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onSaveFile" styleClass="top-menu-item" text="保存">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onCloseForms" styleClass="top-menu-item" text="退出">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="ESCAPE" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" styleClass="top-menu" text="运行">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#onCompile" styleClass="top-menu-item" text="编译">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F9" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onRun" styleClass="top-menu-item" text="运行">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F10" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" styleClass="top-menu" text="帮助">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#onOpenDocument" styleClass="top-menu-item" text="教学文档">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#onAbout" styleClass="top-menu-item" text="关于">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F2" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="500.0" styleClass="button-group" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="minimizeFormsBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onMinimizeForms" prefHeight="35.0" prefWidth="60.0" styleClass="minimize-forms-button" />
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="windowFormsBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onWindowForms" prefHeight="35.0" prefWidth="60.0" styleClass="window-forms-button" />
+                        <Button fx:id="maximizeFormsBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onMaximizeForms" prefHeight="35.0" prefWidth="60.0" styleClass="maximize-forms-button" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="closeFormsBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCloseForms" prefHeight="35.0" prefWidth="60.0" styleClass="close-forms-button" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="765.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="764.0" prefWidth="280.0" styleClass="file-list-parent" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="projectNameLabel" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="280.0" styleClass="project-name-label" VBox.vgrow="ALWAYS" />
+                  <ListView fx:id="fileListView" prefHeight="764.0" prefWidth="337.0" styleClass="file-list-view" />
+               </children>
+            </VBox>
+            <VBox maxHeight="1.7976931348623157E308" prefHeight="807.0" prefWidth="698.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="698.0" styleClass="nav-bar" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="450.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="pathLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="450.0" styleClass="path-label" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="200.0" styleClass="button-group" HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXToggleButton fx:id="debugToggleButton" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onSwitchDebug" prefHeight="25.0" prefWidth="129.0" text="试调" toggleLineColor="#9cbd42" HBox.hgrow="ALWAYS">
+                                 <toggleColor>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#9cbd42" />
+                                          <Stop color="#5ebd42" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </toggleColor>
+                              </JFXToggleButton>
+                              <JFXButton onAction="#onCompile" style="-fx-background-color: #9CBD42; -fx-text-fill: white;" styleClass="compile-button" text="编译" textFill="WHITE" />
+                              <JFXButton onAction="#onRun" style="-fx-background-color: #9CBD42; -fx-text-fill: white;" styleClass="run-button" text="运行" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="codeAreaParent" prefHeight="593.0" prefWidth="650.0" styleClass="code-area-parent" VBox.vgrow="ALWAYS" />
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="200.0" styleClass="console-plane">
+                     <children>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="803.0" styleClass="console-title" text="控制台" VBox.vgrow="ALWAYS" />
+                        <ScrollPane fx:id="consoleScrollPlane" hbarPolicy="ALWAYS" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="197.0" prefViewportHeight="163.0" prefViewportWidth="718.0" prefWidth="718.0" styleClass="console-scroll-plane" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                           <content>
+                              <Label fx:id="consoleArea" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="718.0" styleClass="console-text" wrapText="true" VBox.vgrow="ALWAYS" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

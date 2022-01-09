@@ -1,0 +1,47 @@
+.black-text {
+    -fx-fill: #262B33;
+}
+
+.black2-text {
+    -fx-fill: #2F343F;
+}
+
+.light-black-text {
+    -fx-fill: #464A77;
+}
+
+.orange-text {
+    -fx-fill: #FF9B5E;
+}
+
+.green-text {
+    -fx-fill: #9CD1BB;
+}
+
+.magenta-text {
+    -fx-fill: #C39AC9;
+}
+
+.yellow-text {
+    -fx-fill: #FFD76D;
+}
+
+.gray-text {
+    -fx-fill: #393F4C;
+}
+
+.red-text {
+    -fx-fill: #FF657A;
+}
+
+.white {
+    -fx-fill: #ffffff;
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+
+.li-shu{
+    -fx-font-family: "LISU";
+}

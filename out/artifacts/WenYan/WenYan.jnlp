@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="WenYan.jnlp">
+  <information>
+    <title>WenYan</title>
+    <vendor>1.0</vendor>
+    <description>WenYan</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="WenYan.jar" size="256473" download="eager" />
+    <jar href="libs\jfoenix-8.0.10.jar" size="2710207" download="eager" />
+    <jar href="libs\richtextfx-0.10.7.jar" size="300800" download="eager" />
+    <jar href="libs\richtextfx-fat-0.10.7.jar" size="880558" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="1000" height="800" main-class="editor.Main"  name="WenYan" />
+  <update check="background"/>
+</jnlp>

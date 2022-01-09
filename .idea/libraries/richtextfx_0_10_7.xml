@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="richtextfx-0.10.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/libs/richtextfx-0.10.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

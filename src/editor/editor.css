@@ -1,0 +1,251 @@
+* {
+    -fx-font-size: 16px;
+    -fx-fill: #D2D9CB;
+    -fx-text-fill: #D2D9CB;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.main {
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-border-style: solid;
+}
+
+.top-bar {
+    -fx-background-color: #262B33;
+}
+.top-menu-bar {
+    -fx-background-color: transparent;
+    -fx-start-margin: 0;
+    -fx-end-margin: 0;
+}
+
+.top-menu-bar > .container > .menu-button {
+    -fx-background-color: none;
+}
+.top-menu-bar > .container > .menu-button:hover,
+.top-menu-bar > .container > .menu-button:showing {
+    -fx-background-color: #464A77;
+}
+
+.top-menu {
+    -fx-border-width:0;
+    -fx-padding: 0 0 0 0 !important;
+    -fx-background-insets: 0 0 0 0 !important;
+    -fx-background-color: #2F343F;
+}
+
+.top-menu-bar .context-menu {
+    -fx-background-color: #2F343F;
+}
+
+.top-menu-item {
+    -fx-pref-width: 200px;
+    -fx-background-color: #2F343F;
+}
+.top-menu-item:hover {
+    -fx-background-color: #464A77;
+}
+
+.minimize-forms-button,
+.maximize-forms-button,
+.window-forms-button,
+.close-forms-button {
+    -fx-border-radius: 0;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+}
+.minimize-forms-button:hover,
+.maximize-forms-button:hover,
+.window-forms-button:hover {
+    -fx-background-color: #464A77;
+}
+.close-forms-button:hover {
+    -fx-background-color: #E81123;
+}
+.minimize-forms-button {
+    -fx-background-image: url(../icon/btn_minimize.png);
+    -fx-background-size: 19px 19px;
+}
+.maximize-forms-button {
+    -fx-background-image: url(../icon/btn_maximize.png);
+    -fx-background-size: 14px 14px;
+}
+.window-forms-button {
+    -fx-background-image: url(../icon/btn_windowed.png);
+    -fx-background-size: 16px 16px;
+}
+.close-forms-button {
+    -fx-background-image: url(../icon/btn_close.png);
+    -fx-background-size: 16px 16px;
+}
+
+.nav-bar {
+    -fx-background-color: #2F343F;
+}
+
+.compile-button,
+.run-button {
+    -fx-font-size: 18px;
+    -fx-start-margin: 10px;
+}
+
+.file-list-parent {
+    -fx-background-color: #2F343F;
+    -fx-border-color: #393F4C;
+    -fx-border-width: 0 1px 0 0;
+    -fx-border-style: solid;
+}
+
+.project-name-label {
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+    -fx-padding: 10px 10px;
+
+    -fx-border-color: #393F4C;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-style: solid;
+}
+
+.file-list-view {
+    -fx-background-color: #2F343F;
+}
+
+.file-list-view *{
+    -fx-background-color: transparent;
+}
+.file-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 20px 10px 30px;
+}
+.file-list-view .list-cell:selected {
+    -fx-background-color: #41416A;
+}
+.file-list-view .scroll-bar,
+.file-list-view .scroll-bar *{
+    -fx-background-color: transparent;
+    -fx-font-size: 10px;
+}
+.file-list-view .scroll-bar:horizontal .thumb,
+.file-list-view .scroll-bar:vertical .thumb{
+    /*-fx-background-insets: 2, 0, 0;*/
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+    -fx-background-color: #345674;
+}
+
+.path-label {
+    -fx-padding: 0 10px;
+}
+
+.code-area-parent {
+    -fx-background-color: #262B33;
+}
+.code-area{
+    -fx-padding: 20px;
+    -fx-pref-height: 600px;
+    -fx-background-color: #262B33;
+    -fx-stroke: #ffffff;
+    -fx-fill: #ffffff;
+}
+.code-area .line-highlighter{
+    -fx-fill: #303342;
+}
+/*插入光标的颜色*/
+.code-area .caret {
+    -fx-stroke: #ffffff;
+}
+.code-area .paragraph-box .text.match {
+    -rtfx-background-color: #ffffff;
+}
+* {
+    -fx-display-caret: false;
+}
+.code-area .selection {
+    -fx-fill: #3A3D4B;
+}
+.startSingleQuote,
+.endSingleQuote,
+.name {
+    -fx-fill: #FF9B5E;
+}
+.startDoubleQuote,
+.endDoubleQuote,
+.string {
+    -fx-fill: #FFD76D;
+}
+.declareVariable,
+.declareFunctionVariable,
+.declareFunction,
+.declareFunctionEnd,
+.variableNamed,
+.functionVariableNamed,
+.functionNamed {
+    -fx-fill: #9CD1BB;
+}
+.number {
+    -fx-fill: #C39AC9;
+}
+.number,
+.functionReturn,
+.binaryOperator,
+.assign,
+.get,
+.estimate,
+.otherwise,
+.endIf,
+.traversal,
+.endTraversal,
+.print,
+.println,
+.call,
+.callValue,
+.callValueEnd {
+    -fx-fill: #FF657A;
+}
+.error {
+    -fx-fill: red;
+    -fx-underline: true;
+}
+
+.console-plane {
+}
+
+.console-title {
+    -fx-padding: 5px 10px;
+    -fx-background-color: #2F343F;
+    -fx-border-color: #393F4C;
+    -fx-border-width: 1px 0 1px 0;
+}
+
+
+.console-scroll-plane * {
+    -fx-background-color: transparent;
+}
+
+.console-scroll-plane {
+    -fx-background-color: #262B33;
+    -fx-padding: 10px 0;
+
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}
+
+.console-scroll-plane .scroll-bar,
+.console-scroll-plane .scroll-bar *{
+    -fx-background-color: transparent;
+    -fx-font-size: 10px;
+}
+.console-scroll-plane .scroll-bar:horizontal .thumb,
+.console-scroll-plane .scroll-bar:vertical .thumb{
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+    -fx-background-color: #345674;
+}
+
+.console-text {
+    -fx-background-color: transparent;
+    -fx-padding: 0 20px;
+}
